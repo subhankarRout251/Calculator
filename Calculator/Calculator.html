@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculater</title>
+    <style>
+        .calculater{
+            text-align: center;
+            justify-content: center;
+            background-color: rgb(1, 4, 21);
+            border-radius: 6px ;
+            height: 380px;
+            
+        }
+        input{
+            width: 50px;
+            height: 50px;
+            margin: 3px 0;
+            border-radius: 50%;
+            border:1px solid rgba(0, 0, 0, 0.84);
+            cursor: pointer;
+        }
+        .equal{
+            width: 103px;
+        }
+        .display{
+            width: 210px;
+            font-size: 30px;
+            text-align: right;
+            color: white;
+            background-color: black;
+            border-radius: 2px;
+        }
+        input:active{
+            background-color:rgba(248, 245, 255, 0.457) ;
+        }
+        h1{
+            text-align: center;
+        }
+        .yellow{
+            background-color: rgba(247, 169, 35, 0.959);
+            color: white;
+        }
+        .gry{
+            background-color: rgba(255, 255, 255, 0.76);
+        }
+        .num{
+            background-color: rgb(63, 63, 63);
+            color: white;
+        }
+        .ads{
+            border-radius: 30px;
+        }
+        marquee{
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <marquee direction="right">WellCome to MY CALCULATER</marquee>
+        <div class="calculater">
+            <input type="text" class="display" placeholder="0"/>
+            <div class="row">
+              <input type="button" class="clrs gry"value="AC" onclick="clr()">
+              <input type="button"  class="gry" value="DL" onclick="del()">
+              <input type="button" class="gry" value="." onclick="print('.')">
+              <input type="button" class="yellow" value="/" onclick="print('/')">
+            </div>
+            <div class="row">
+                <input type="button" class="num" value="7"onclick="print('7')">
+                <input type="button" class="num" value="8"onclick="print('8')">
+                <input type="button" class="num" value="9"onclick="print('9')">
+                <input type="button" class="yellow" value="x"onclick="print('*')">
+              </div>
+              <div class="row">
+                <input type="button" class="num" value="4"onclick="print('4')">
+                <input type="button" class="num" value="5"onclick="print('5')">
+                <input type="button" class="num" value="6"onclick="print('6')">
+                <input type="button" class="yellow" value="-"onclick="print('-')">
+              </div>
+              <div class="row">
+                <input type="button" class="num" value="1"onclick="print('1')">
+                <input type="button" class="num" value="2"onclick="print('2')">
+                <input type="button" class="num" value="3"onclick="print('3')">
+                <input type="button" class="yellow" class="plus"value="+"onclick="print('+')">
+              </div>
+              <div class="row">
+                <input type="button" class="num" value="00"onclick="print('00')">
+                <input type="button" class="num" value="0"onclick="print('0')">
+                <input type="button"  class="equal yellow ads" value="="onclick="equa()">
+              </div>
+        </div>
+    </div>
+
+    <script>
+        let onDisplay =document.querySelector(".display");
+        let clear=docoment.querySelector(".clrs ");
+        let equal=document.querySelector(".equal")
+        let 
+        function print(num){
+            onDisplay.value +=num;
+        }
+        function clr(){
+            onDisplay.value="";
+        }
+        function del(){
+            onDisplay.value=onDisplay.value.slice(0,-1);
+        }
+        function equa(){
+            try{
+                onDisplay.value=eval(onDisplay.value);
+            }
+            catch(err){
+                alert("Error");
+            }
+            
+        }
+    
+    </script>
+</body>
+</html>
